@@ -18,6 +18,8 @@ app.get("/clientes", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => console.log("hello there"));
+
 app.post("/sessao", async (req, res) => {
   const { nome_cliente } = req.body;
   const { cpf } = req.body;
