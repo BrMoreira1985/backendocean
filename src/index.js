@@ -7,7 +7,7 @@ const pool = new Pool({ connectionString: process.env.BD_URL });
 const porta = process.env.porta || 8080;
 
 app.use(express.json());
-app.use(cors);
+app.use(cors());
 
 app.get("/clientes", async (req, res) => {
   try {
