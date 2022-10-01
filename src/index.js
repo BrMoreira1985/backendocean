@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 const { Pool } = require("pg");
 const pool = new Pool({ connectionString: process.env.BD_URL });
-const porta = process.env.porta || 8080;
+const port = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cors());
@@ -48,6 +48,6 @@ app.post("/sessao", async (req, res) => {
   }
 });
 
-app.listen(porta, () => {
-  console.log(`escutando na porta ${porta}`);
+app.listen(port, () => {
+  console.log(`escutando na porta ${port}`);
 });
