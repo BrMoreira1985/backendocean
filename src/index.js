@@ -18,7 +18,13 @@ app.get("/clientes", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => console.log("hello there"));
+app.get("/", (req, res) => {
+  try {
+    return res.status(200).send("hello there");
+  } catch (err) {
+    return res.status(400).send(err);
+  }
+});
 
 app.post("/sessao", async (req, res) => {
   const { nome_cliente } = req.body;
