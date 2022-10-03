@@ -5,6 +5,10 @@ const app = express();
 const { Pool } = require("pg");
 const pool = new Pool({ connectionString: process.env.BD_URL });
 const port = process.env.PORT || 3001;
+const client = require("twilio")(
+  "ACfbfaa6b33b177de40aeba23cc1b3a78c",
+  "e21f948a810b676326e304e683d274d8"
+);
 
 app.use(express.json());
 app.use(cors());
